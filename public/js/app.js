@@ -1,5 +1,12 @@
 window.addEventListener('load', () => {
     // Put all client-side code here
+
+
+    navigator.getUserMedia = (navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia || 
+        navigator.msGetUserMedia);
+
     const chatTemplate = Handlebars.compile($('#chat-template').html());
     const chatContentTemplate = Handlebars.compile($('#chat-content-template').html());
     const chatEl = $('#chat');
