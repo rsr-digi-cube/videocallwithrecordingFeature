@@ -1,0 +1,182 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "task",
+    "description": "task api documentation",
+    "version": "1.0"
+  },
+  "produces": [
+    "application/json"
+  ],
+  "host": "localhost:8000",
+  "basePath": "",
+  "paths": {
+    "/user/register": {
+      "post": {
+        "x-swagger-router-controller": "middleware-name1",
+        "operationId": "/user/register",
+        "tags": [
+          "user"
+        ],
+        "description": "/user/register",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "fullName",
+            "description": "fullName is required",
+            "required": true,
+            "type": "string"
+          },
+
+          {
+            "in": "formData",
+            "name": "email",
+            "description": "email is required",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "password",
+            "description": "password is required",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/user/login": {
+      "post": {
+        "x-swagger-router-controller": "middleware-name1",
+        "operationId": "/user/login",
+        "tags": [
+          "user"
+        ],
+        "description": "/user/login",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "password",
+            "description": "password is required",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "email",
+            "description": "email is required",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/user/addItem": {
+      "post": {
+        "x-swagger-router-controller": "middleware-name1",
+        "operationId": "/user/addItem",
+        "tags": [
+          "user"
+        ],
+        "description": "/user/addItem",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "authorization",
+            "description": "authorization is required",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "role",
+            "description": "role is required",
+            "required": true,
+            "type": "string",
+            "enum": ["user"]
+          },
+          {
+            "in": "formData",
+            "name": "pair",
+            "description": "pair is required",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "type",
+            "description": "type is required",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "price",
+            "description": "price is required",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "in": "formData",
+            "name": "qty",
+            "description": "qty is required",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "in": "formData",
+            "name": "side",
+            "description": "side is required",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "status",
+            "description": "status is required",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "filled",
+            "description": "filled is required",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/user/getItem": {
+      "get": {
+        "x-swagger-router-controller": "middleware-name1",
+        "operationId": "/user/getItem",
+        "tags": [
+          "user"
+        ],
+        "description": "/user/getItem",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "authorization",
+            "description": "authorization is required",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "role",
+            "description": "role is required",
+            "required": true,
+            "type": "string",
+            "enum": ["user"]
+          }
+        ],
+        "responses": {}
+      }
+    }
+  }
+}
